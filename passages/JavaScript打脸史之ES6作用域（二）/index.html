@@ -8,12 +8,12 @@
   
   
   
-  <title>王sad的博客</title>
+  <title>JavaScript打脸史之ES6作用域（一） | 王sad的博客</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-    <meta name="keywords" content="Hexo, theme-bmw" />
+    <meta name="keywords" content="ES6,ES6," />
   
 
   <script>
@@ -162,139 +162,119 @@
 </script>
 
       
-<div class="container home-index">
-  
-  <div class="post">
-    <h1 class="article-title">
-      <a href="/passages/JavaScript%E6%89%93%E8%84%B8%E5%8F%B2%E4%B9%8BES6%E4%BD%9C%E7%94%A8%E5%9F%9F%EF%BC%88%E4%B8%80%EF%BC%89/">
-        <span>JavaScript打脸史之ES6作用域（一）</span>
-      </a>
-    </h1>
-    <!-- PC端文章信息 -->
-    <div class="article-top-meta pc-view">
-      <span>
-        发布时间 : 2018-10-13
-      </span>
-    </div>
-    <!-- 移动端文章信息 -->
-    <div class="article-top-meta mobile-view">
-      <span>
-        发布 : 2018-10-13
-      </span>
-      
-        <span>
-        分类 :
-          <a href="/categories/ES6/">
-            ES6
-          </a>
-        </span>
-      
-      
-    </div>
-    
-    <!-- 文章简介 -->
-    <div class="article-content">
-      <div class="markdown-body article-content--inner" v-html="mdToHtml(psg.summary)">
-        
-      </div>
-    </div>
-    <div class="article-footer">
-      <div class="article-meta pull-left">
-        <!-- 分类pc端可见 -->
-        <span class="pc-view">
-          
-            <i class="iconfont icon-tag"></i>分类:
-            <a href="/categories/ES6/">
-              ES6
-            </a>
-          </span>
-          
-        <span>
-          
-            <i class="iconfont icon-06tags"></i>标签:
-            
-              <span class="span--tag">
-                <a href="/tags/ES6/">
-                  #ES6
-                </a>
-              </span>
-            
-                    
-        </span>
-      </div>
-      
-    </div>
-  </div>
-  
-  <div class="post">
-    <h1 class="article-title">
-      <a href="/passages/JavaScript%E6%89%93%E8%84%B8%E5%8F%B2%E4%B9%8BES6%E4%BD%9C%E7%94%A8%E5%9F%9F%EF%BC%88%E4%BA%8C%EF%BC%89/">
-        <span>JavaScript打脸史之ES6作用域（一）</span>
-      </a>
-    </h1>
-    <!-- PC端文章信息 -->
-    <div class="article-top-meta pc-view">
-      <span>
-        发布时间 : 2018-10-13
-      </span>
-    </div>
-    <!-- 移动端文章信息 -->
-    <div class="article-top-meta mobile-view">
-      <span>
-        发布 : 2018-10-13
-      </span>
-      
-        <span>
-        分类 :
-          <a href="/categories/ES6/">
-            ES6
-          </a>
-        </span>
-      
-      
-    </div>
-    
-    <!-- 文章简介 -->
-    <div class="article-content">
-      <div class="markdown-body article-content--inner" v-html="mdToHtml(psg.summary)">
-        
-      </div>
-    </div>
-    <div class="article-footer">
-      <div class="article-meta pull-left">
-        <!-- 分类pc端可见 -->
-        <span class="pc-view">
-          
-            <i class="iconfont icon-tag"></i>分类:
-            <a href="/categories/ES6/">
-              ES6
-            </a>
-          </span>
-          
-        <span>
-          
-            <i class="iconfont icon-06tags"></i>标签:
-            
-              <span class="span--tag">
-                <a href="/tags/ES6/">
-                  #ES6
-                </a>
-              </span>
-            
-                    
-        </span>
-      </div>
-      
-    </div>
-  </div>
+
+
+
+
+
+
+
+
+<div class="container post-index">
+
   
 
-  <nav class="page-navigation">
+<div class="post">
+  <h1 class="article-title">
+    <span>JavaScript打脸史之ES6作用域（一）</span>
+  </h1>
+  <div class="article-top-meta">
+    <span>
+      发布 : 
+      2018-10-13
+    </span>
     
+      <span>
+        分类 : 
+          <a href="/categories/ES6/">
+            ES6
+          </a>
+      </span>
+    
+    
+  </div>
+
+  
+
+  <div class="article-content">
+    <div class="markdown-body">
+      <p>在先前的 ES 标准中，如果未声明过 <code>a</code> ，在任何位置声明 <code>a = 1</code> 即声明了一个 <code>window</code> 下的全局变量 <code>a</code>;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    a &#x3D; 1</span><br><span class="line">&#125;</span><br><span class="line">for(b&#x3D;1;b&lt;2;b++)&#123;</span><br><span class="line">    c &#x3D; 3</span><br><span class="line">&#125;</span><br><span class="line">function x()&#123;</span><br><span class="line">    d &#x3D; 4</span><br><span class="line">&#125;</span><br><span class="line">x()</span><br><span class="line">console.log(a)    &#x2F;&#x2F;1</span><br><span class="line">console.log(b)    &#x2F;&#x2F;2</span><br><span class="line">console.log(c)    &#x2F;&#x2F;3</span><br><span class="line">console.log(d)    &#x2F;&#x2F;4</span><br></pre></td></tr></table></figure>
+
+<p>而在函数内声明 <code>var a = 1</code>,<code>a</code> 的作用域在当前函数中，否则 <code>a</code> 的作用域即 <code>window</code> ，并且两者都会变量提升;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">console.log(a)    &#x2F;&#x2F;undefined</span><br><span class="line">console.log(b)    &#x2F;&#x2F;undefined</span><br><span class="line">console.log(c)    &#x2F;&#x2F;undefined</span><br><span class="line">&#123;</span><br><span class="line">    var a &#x3D; 1</span><br><span class="line">&#125;</span><br><span class="line">for(var b&#x3D;1;b&lt;2;b++)&#123;</span><br><span class="line">    var c &#x3D; 3</span><br><span class="line">&#125;</span><br><span class="line">function x()&#123;</span><br><span class="line">    var d &#x3D; 4</span><br><span class="line">&#125;</span><br><span class="line">x()</span><br><span class="line">console.log(a)    &#x2F;&#x2F;1</span><br><span class="line">console.log(b)    &#x2F;&#x2F;2</span><br><span class="line">console.log(c)    &#x2F;&#x2F;3</span><br><span class="line">console.log(d)    &#x2F;&#x2F;d is not defined</span><br></pre></td></tr></table></figure>
+
+<p>而当我们需要使用闭包，即实现暴露一个被隐藏的局部变量的时候，我们可以这样来写;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function x()&#123;</span><br><span class="line">    var a &#x3D; 1</span><br><span class="line">    b &#x3D; function()&#123;</span><br><span class="line">        console.log(a)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">x()</span><br><span class="line">b()    &#x2F;&#x2F;1</span><br></pre></td></tr></table></figure>
+
+<p>我们为了暴露一个隐藏的局部变量，又暴露了一个全局变量 <code>x</code>,故继续改进,声明一个匿名立即执行函数;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">(function()&#123;</span><br><span class="line">    var a &#x3D; 1</span><br><span class="line">    b &#x3D; function()&#123;</span><br><span class="line">        console.log(a)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;())</span><br><span class="line">b() &#x2F;&#x2F;1</span><br></pre></td></tr></table></figure>
+
+<p>为了实现这样的一个功能，我们竟需如此大费周折。</p>
+<p>故，<code>ES6</code> 中的 <code>let</code> 应运而生。</p>
+
+    </div>
+  </div>
+  
+  
+  
+    <div class="social-share"
+  style="margin-top: 1rem"
+  data-wechat-qrcode-title="<p>微信扫一扫</p>"
+  data-wechat-qrcode-helper="<p>微信右上角, 扫一扫分享</p>"
+   data-sites="qzone, qq, weibo, wechat, douban, google, facebook, twitter" 
+  
+>
+  <span style="color: #6b7487; font-size: 1.4rem;">分享到: </span>
+</div>
+<script src="https://cdn.bootcss.com/social-share.js/1.0.16/js/social-share.min.js" async>
+  
+
+  
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+      <span>
+        
+          <i class="iconfont icon-06tags"></i>标签: 
+          
+          <span class="span--tag">
+            <a href="/tags/ES6/">
+              #ES6
+            </a>
+          </span>
+          
+        
+      </span>
+    </div>
+    <div class="article-meta pull-right">
+    </div>
+  </div>
+</div>
+
+
+  <aside id="sidebar">
+    <p id="sidebar-header"></p>
+    <ol id="sidebar-toc"></ol>
+  </aside>
+  <script async>setTimeout(generateToc, 10);</script>
+
+
+  <nav class="post-navigation">
+    
+    
+      <div class="nav-next">
+        下一篇:
+        <a href="/passages/JavaScript%E6%89%93%E8%84%B8%E5%8F%B2%E4%B9%8BES6%E4%BD%9C%E7%94%A8%E5%9F%9F%EF%BC%88%E4%B8%80%EF%BC%89/" target="_self">JavaScript打脸史之ES6作用域（一）</a>
+        <i class="iconfont icon-next"></i>
+      </div>
     
   </nav>
 
    
+
+   
+
 </div>
 
 
